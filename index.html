@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Champer Paint</title>
+		<link rel="stylesheet" type="text/css" href="css/myStyle.css">
+		<script type="text/javascript">
+			var ua = navigator.userAgent;
+			var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+			isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+			isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+			isMobile = isIphone || isAndroid;
+			//判断
+			if(isMobile){
+				window.location = 'mobile.html'
+			}
+		</script>
+	</head>
+
+	<body>
+			<ul id="bar">
+				<li id = "firstLi"></li>
+				<li id="head">
+					<a>Champer Paint</a>
+				</li>
+				
+				<li class = "level1" id="open">
+					<a>打开</a>
+				</li>
+				<li class = "level1" id = "saveMenu">
+					<a>保存</a>
+					<ul>
+						<li>
+							<input type="text" id="savaName" value=""/>
+						</li>
+					</ul>
+				</li>
+				<li class = "level1" id="shap">
+					<a>画笔形状</a>
+					<ul>
+						<li class = "level2" id="curve"><a>曲线</a></li>
+						<li class = "level2" id="line"><a>直线</a></li>
+						<li class = "level2" id="circle"><a>圆</a></li>
+						<li class = "level2" id="oval"><a>椭圆</a></li>
+						<li class = "level2" id="rectangle"><a>矩形</a></li>
+					</ul>
+				</li>
+				<li class = "level1" id="penWidth">
+					<a href="#">画笔粗细</a>
+					<ul>
+						<li class = "level2"><a>1</a></li>
+						<li class = "level2"><a>2</a></li>
+						<li class = "level2"><a>3</a></li>
+						<li class = "level2"><a>4</a></li>
+						<li class = "level2"><a>5</a></li>
+						<li class = "level2"><a>6</a></li>
+					</ul>
+				</li>
+				<li class = "level1" id="colorMenu">
+					<a href="#">画笔颜色</a>
+					<ul>
+						<li class = "level2">
+							<input type="color" id="colorSelect" value="#000000"/>
+						</li>
+					</ul>
+				</li>
+				<li class = "level1" id="eraser">
+					<a href="#">橡皮擦</a>
+				</li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div id="cb">
+				<canvas id="canvas" width="1200" height="750"></canvas>		
+			</div>
+		<script src="js/myScript.js"></script>
+	</body>
+
+</html>
